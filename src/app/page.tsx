@@ -21,14 +21,31 @@ export default async function Home() {
       <SectionHeader label="Writing" count={`${posts.length} posts`} />
       <section className="pb-18">
         <ul className="divide-y divide-border">
-          {posts.map((post) => (
-            <li key={post.slug}>
-              <Link href={`/writing/${post.slug}`} className="block py-4">
-                <p className="text-[15px] font-medium text-foreground">{post.title}</p>
-                <p className="mt-1 text-[13px] text-muted-foreground">{post.description}</p>
-              </Link>
-            </li>
-          ))}
+          {posts.map((post, index) => {
+            const status = post.status === "wip" ? "In progress" : "Shipped";
+            const statusClass =
+              post.status === "wip"
+                ? "border-border text-muted-foreground"
+                : "border-green-700 text-green-700 dark:border-green-400 dark:text-green-400";
+            return (
+              <li key={post.slug} className="grid grid-cols-[36px_1fr_auto] gap-4 py-4">
+                <span className="pt-0.5 text-[13px] font-mono text-muted-foreground">
+                  {String(index + 1).padStart(2, "0")}.
+                </span>
+                <Link href={`/writing/${post.slug}`} className="group block">
+                  <p className="text-[15px] font-medium text-foreground group-hover:text-[var(--accent-warm)]">
+                    {post.title}
+                  </p>
+                  <p className="mt-1 text-[13px] text-muted-foreground">{post.description}</p>
+                </Link>
+                <span
+                  className={`inline-flex h-fit rounded-[3px] border px-2 py-1 text-[10px] font-mono uppercase tracking-[0.14em] ${statusClass}`}
+                >
+                  {status}
+                </span>
+              </li>
+            );
+          })}
         </ul>
       </section>
 
