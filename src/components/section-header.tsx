@@ -1,6 +1,6 @@
 type SectionHeaderProps = {
   label: string;
-  count: string;
+  count?: string;
 };
 
 export function SectionHeader({ label, count }: SectionHeaderProps) {
@@ -10,7 +10,7 @@ export function SectionHeader({ label, count }: SectionHeaderProps) {
         <span className="text-[var(--accent-warm)]">/ </span>
         {label}
       </span>
-      <span className="text-muted-foreground">{count}</span>
+      {count && <span className="text-muted-foreground">{count}</span>}
     </h2>
   );
 }
