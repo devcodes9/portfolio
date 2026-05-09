@@ -64,7 +64,6 @@ export default async function Home() {
           <a className="border-b border-border hover:text-[var(--accent-warm)]" href="https://github.com/formbricks/formbricks" target="_blank" rel="noopener noreferrer">formbricks</a>,
           {" "}and{" "}
           <a className="border-b border-border hover:text-[var(--accent-warm)]" href="https://github.com/usertour/usertour" target="_blank" rel="noopener noreferrer">usertour</a>.
-          {" "}Mostly ergonomics fixes, a few features. Full list with PR numbers at <span className="font-mono">/oss</span>.
         </p>
       </section>
     </div>
