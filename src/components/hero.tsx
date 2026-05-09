@@ -5,10 +5,7 @@ export function Hero() {
     <section className="pt-7 pb-20">
       <div className="grid items-end gap-14 sm:grid-cols-[1fr_200px]">
         <div>
-          <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
-            dev.dalia — engineer + writing + open source
-          </p>
-          <h1 className="mt-4 text-[clamp(56px,6.6vw,80px)] font-bold leading-[0.96] tracking-[-0.035em]">
+          <h1 className="text-[clamp(56px,6.6vw,80px)] font-bold leading-[0.96] tracking-[-0.035em]">
             Hi, I&apos;m
             <span className="block">Dev Dalia.</span>
           </h1>
