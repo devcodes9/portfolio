@@ -29,7 +29,7 @@ export function Nav() {
     "inline-flex h-[22px] w-[22px] items-center justify-center rounded-[4px] border border-foreground text-[11px] font-semibold leading-none transition-colors";
 
   return (
-    <header className="mx-auto max-w-5xl px-6 sm:px-10">
+    <header className="mx-auto max-w-[1100px] px-6 sm:px-10">
       <nav className="flex items-center border-y border-foreground py-1.5">
         {/* Desktop letterbar */}
         <ul className="hidden items-center sm:flex">
