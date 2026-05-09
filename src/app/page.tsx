@@ -1,9 +1,11 @@
 import { getContentList } from "@/lib/content";
 import { Hero } from "@/components/hero";
 import { Experience } from "@/components/experience";
+import { Extracurriculars } from "@/components/extracurriculars";
 import { Projects } from "@/components/projects";
 import { Hackathons } from "@/components/hackathons";
 import { SectionHeader } from "@/components/section-header";
+import { experience } from "@/data/experience";
 import { hackathons } from "@/data/hackathons";
 import Link from "next/link";
 
@@ -17,8 +19,9 @@ export default async function Home() {
     <div className="mx-auto max-w-[1100px] px-6 sm:px-10">
       <Hero />
 
-      <SectionHeader label="Experience" count="5 years" />
+      <SectionHeader label="Experience" count={`${experience.length} roles`} />
       <Experience />
+      <Extracurriculars />
 
       <SectionHeader label="Projects" count="5 shipped" />
       <Projects />

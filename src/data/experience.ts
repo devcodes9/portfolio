@@ -2,7 +2,7 @@ export type ExperienceEntry = {
   company: string;
   role: string;
   period: string;
-  type: "Full-time" | "Freelance" | "Internship" | "Extracurricular";
+  type: "Full-time" | "Freelance" | "Internship";
   summary: string;
   impact: string;
   url?: string;
@@ -46,12 +46,11 @@ export const experience: ExperienceEntry[] = [
     url: "https://oneassure.in/",
   },
   {
-    company: "Encode · PDEU",
-    role: "Tech Head",
-    period: "Sep 2021 — May 2023",
-    type: "Extracurricular",
-    summary: "Led the technical team of PDEU's Computer Science club.",
-    impact: "Organized hackathons, ran workshops on web/mobile/backend, mentored juniors.",
-    url: "https://pdpu.ac.in/",
+    company: "Meiro Mobility",
+    role: "Backend / ML Engineer Intern",
+    period: "Oct — Dec 2021",
+    type: "Internship",
+    summary: "Backend + ML at a mobility startup (formerly Flow Mobility).",
+    impact: "Optimized a routing algorithm to run 17% faster. Built backend on Firebase Cloud Functions. Contributed to a real-time admin dashboard with Node.js + React.",
   },
 ];
