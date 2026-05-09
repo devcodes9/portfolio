@@ -15,7 +15,7 @@ export const hackathons: readonly Hackathon[] = [
     org: "PDEU",
     period: "2024",
     outcome: "Winner",
-    summary: "Won Gujarat's largest hackathon with team Encode. 36-hour build, judged on craft and impact.",
+    summary: "Won one of Gujarat's largest hackathons. 36-hour build, judged on craft and impact.",
     pitchUrl: "https://www.youtube.com/watch?v=Rek1IgqjLfw&t=253s",
   },
   {
