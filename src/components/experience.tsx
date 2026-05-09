@@ -25,7 +25,7 @@ export function Experience() {
               <p className="text-[11px] font-mono uppercase tracking-[0.12em] text-muted-foreground">
                 {item.period}
               </p>
-              <p className="text-[10px] font-mono uppercase tracking-[0.16em] text-[var(--accent-warm)]">
+              <p className="text-[10px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
                 {item.type}
               </p>
             </div>

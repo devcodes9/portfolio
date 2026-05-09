@@ -81,7 +81,11 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0 0 0 / 10%);
   --sidebar-ring: oklch(0.708 0 0);
-  --accent-warm: oklch(0.55 0.15 50);
+  /* Monochrome only: --accent-warm aliases to foreground so existing
+     callsites (hover states, slash glyphs) stay valid without sweeping
+     edits. Type/outcome labels and the Featured badge are switched to
+     muted-foreground / inverted treatments at their callsites. */
+  --accent-warm: var(--foreground);
 }
 
 /* Dark mode */

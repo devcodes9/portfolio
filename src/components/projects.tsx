@@ -26,7 +26,7 @@ export function Projects() {
                   {project.title}
                 </Link>
                 {project.featured && (
-                  <span className="ml-auto rounded-[3px] bg-[var(--accent-warm)] px-2 py-1 text-[9px] font-mono uppercase tracking-[0.16em] text-white">
+                  <span className="ml-auto rounded-[3px] bg-foreground px-2 py-1 text-[9px] font-mono uppercase tracking-[0.16em] text-background">
                     Featured
                   </span>
                 )}
