@@ -21,7 +21,7 @@ export function Hero() {
           <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[12px] font-mono uppercase tracking-[0.08em] text-muted-foreground">
             <a className="inline-flex min-h-11 items-center border-b border-border pb-0.5 hover:text-[var(--accent-warm)]" href="https://github.com/devcodes9" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a className="inline-flex min-h-11 items-center border-b border-border pb-0.5 hover:text-[var(--accent-warm)]" href="https://linkedin.com/in/devdalia" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a className="inline-flex min-h-11 items-center border-b border-border pb-0.5 hover:text-[var(--accent-warm)]" href="https://x.com/devcodes9" target="_blank" rel="noopener noreferrer">X</a>
+            <a className="inline-flex min-h-11 items-center border-b border-border pb-0.5 hover:text-[var(--accent-warm)]" href="https://x.com/devcodes9" target="_blank" rel="noopener noreferrer">X / @devcodes9</a>
             <a className="inline-flex min-h-11 items-center border-b border-border pb-0.5 hover:text-[var(--accent-warm)]" href="mailto:devdalia9@gmail.com">Email</a>
             <a className="inline-flex min-h-11 items-center border-b border-border pb-0.5 hover:text-[var(--accent-warm)]" href="#">Resume</a>
           </div>
