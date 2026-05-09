@@ -25,5 +25,6 @@ export const hackathons: readonly Hackathon[] = [
     period: "2024",
     outcome: "Winner",
     summary: "Won the internal team hackathon at Shipmnts. Built and shipped in a single sprint with the platform team.",
+    pitchUrl: "https://youtu.be/cQOSwSpTh9Q",
   },
 ];
