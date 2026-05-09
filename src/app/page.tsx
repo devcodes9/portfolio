@@ -46,7 +46,7 @@ export default async function Home() {
       <Hackathons />
 
       <SectionHeader label="Open Source" count="12 PRs · 3 repos" />
-      <section className="pb-20">
+      <section className="pb-18">
         <p className="text-[15px] leading-[1.6] text-foreground/85">
           Merged contributions in{" "}
           <a className="border-b border-border hover:text-[var(--accent-warm)]" href="https://github.com/growthbook/growthbook" target="_blank" rel="noopener noreferrer">growthbook</a>{" "}
@@ -54,6 +54,21 @@ export default async function Home() {
           <a className="border-b border-border hover:text-[var(--accent-warm)]" href="https://github.com/formbricks/formbricks" target="_blank" rel="noopener noreferrer">formbricks</a>,
           {" "}and{" "}
           <a className="border-b border-border hover:text-[var(--accent-warm)]" href="https://github.com/usertour/usertour" target="_blank" rel="noopener noreferrer">usertour</a>.
+        </p>
+      </section>
+
+      <section className="border-t border-border pt-8 pb-20">
+        <p className="text-[15px] leading-[1.6] text-foreground/85">
+          Want to chat about Claude Code, agent tooling, or building with LLMs?{" "}
+          <a
+            href="https://cal.com/devdalia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground underline underline-offset-[3px] decoration-[var(--accent-warm)] hover:text-[var(--accent-warm)]"
+          >
+            Book a 30-minute call ↗
+          </a>
+          . Free. No agenda required.
         </p>
       </section>
     </div>
