@@ -13,17 +13,39 @@ export default function AboutPage() {
     <div className="mx-auto max-w-[1100px] px-6 pt-7 pb-20 sm:px-10">
       <div className="max-w-3xl space-y-4 pb-12 pt-4 text-[15px] leading-[1.7] text-foreground/85">
         <p>
-          I&apos;m Dev Dalia, an AI engineer based in Surat, India. I build
-          things with LLMs and write about what I learn.
+          I&apos;m Dev Dalia, an AI engineer based in Surat, India.
+          I work remotely with{" "}
+          <a
+            href="https://buildway.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
+          >
+            BuildwayAI
+          </a>
+          {" "}(Vienna), building Alawyer — an AI legal research platform
+          for the Austrian market.
         </p>
         <p>
-          Currently the Founding AI Engineer at{" "}
-          <span className="text-foreground">BuildwayAI</span>, building
-          Alawyer — an AI legal research platform for the Austrian market.
           Before that, 1.5 years at{" "}
-          <span className="text-foreground">Shipmnts</span> on full-stack
-          logistics infrastructure, and freelance backend work for{" "}
-          <span className="text-foreground">Zeiierman Trading</span>.
+          <a
+            href="https://shipmnts.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
+          >
+            Shipmnts
+          </a>
+          {" "}on full-stack logistics infrastructure, and freelance
+          backend work for{" "}
+          <a
+            href="https://zeiierman.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
+          >
+            Zeiierman Trading
+          </a>.
         </p>
         <p>
           B.Tech in Computer Engineering from PDEU (9.81 CGPA). Led the tech
@@ -35,12 +57,12 @@ export default function AboutPage() {
       <SectionHeader label="Experience" count="5 years" />
       <Experience />
 
-      <SectionHeader label="Contact" count="5 channels" />
-      <section className="pb-20">
+      <SectionHeader label="Contact" count="4 channels" />
+      <section className="pb-10">
         <ul className="flex flex-wrap gap-x-6 gap-y-3 text-[12px] font-mono uppercase tracking-[0.08em] text-muted-foreground">
           <li>
             <a
-              className="border-b border-border pb-0.5 text-foreground hover:text-[var(--accent-warm)]"
+              className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
               href="mailto:devdalia9@gmail.com"
             >
               Email
@@ -48,7 +70,7 @@ export default function AboutPage() {
           </li>
           <li>
             <a
-              className="border-b border-border pb-0.5 text-foreground hover:text-[var(--accent-warm)]"
+              className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
               href="https://github.com/devcodes9"
               target="_blank"
               rel="noopener noreferrer"
@@ -58,7 +80,7 @@ export default function AboutPage() {
           </li>
           <li>
             <a
-              className="border-b border-border pb-0.5 text-foreground hover:text-[var(--accent-warm)]"
+              className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
               href="https://linkedin.com/in/devdalia"
               target="_blank"
               rel="noopener noreferrer"
@@ -68,7 +90,7 @@ export default function AboutPage() {
           </li>
           <li>
             <a
-              className="border-b border-border pb-0.5 text-foreground hover:text-[var(--accent-warm)]"
+              className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
               href="https://x.com/devcodes9"
               target="_blank"
               rel="noopener noreferrer"
@@ -76,15 +98,22 @@ export default function AboutPage() {
               X / @devcodes9
             </a>
           </li>
-          <li>
-            <a
-              className="border-b border-border pb-0.5 text-foreground hover:text-[var(--accent-warm)]"
-              href="#"
-            >
-              Resume
-            </a>
-          </li>
         </ul>
+      </section>
+
+      <section className="pb-20">
+        <p className="text-[15px] leading-[1.7] text-foreground/85">
+          Want to chat about Claude Code, agent tooling, or building with LLMs?{" "}
+          <a
+            href="https://cal.com/devdalia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground underline underline-offset-[3px] decoration-[var(--accent-warm)] hover:text-[var(--accent-warm)]"
+          >
+            Book a 30-minute call ↗
+          </a>
+          . Free. No agenda required.
+        </p>
       </section>
     </div>
   );
