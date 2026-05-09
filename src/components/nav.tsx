@@ -24,7 +24,7 @@ export function Nav() {
   }, [menuOpen]);
 
   const linkClass =
-    "inline-flex min-h-11 items-center gap-2 px-3 py-2 text-[11px] font-mono uppercase tracking-[0.1em] text-foreground transition-colors hover:text-[var(--accent-warm)]";
+    "inline-flex min-h-11 items-center gap-2 pl-2 pr-3.5 py-2 text-[11px] font-mono uppercase tracking-[0.1em] text-foreground transition-colors hover:text-[var(--accent-warm)]";
   const keyClass =
     "inline-flex h-[22px] w-[22px] items-center justify-center rounded-[4px] border border-foreground text-[11px] font-semibold leading-none transition-colors";
 
@@ -55,7 +55,7 @@ export function Nav() {
         <div className="ml-auto flex items-center gap-3">
           <a
             href="mailto:devdalia9@gmail.com"
-            className={`${linkClass} hidden border-l border-border sm:inline-flex`}
+            className={`${linkClass} hidden sm:inline-flex`}
           >
             <span className={keyClass}>C</span>
             Contact
