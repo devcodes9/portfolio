@@ -13,7 +13,7 @@ export function Hero() {
             <span className="block">Dev Dalia.</span>
           </h1>
           <p className="mt-[22px] text-[13px] font-mono uppercase tracking-[0.06em] text-muted-foreground">
-            Founding AI Engineer · BuildwayAI · Remote, Europe
+            Founding AI Engineer · BuildwayAI · Europe · Remote
           </p>
           <p className="mt-7 max-w-[560px] text-[17px] leading-[1.55] text-foreground/90">
             I build with LLMs for a living. Right now: <strong>Alawyer</strong>, an AI legal research platform for the Austrian market at <strong>BuildwayAI</strong>. Mostly <code className="rounded-[3px] border border-border bg-muted px-1.5 py-[1px] font-mono text-[14px]">TypeScript</code>, <code className="rounded-[3px] border border-border bg-muted px-1.5 py-[1px] font-mono text-[14px]">Claude API</code>, <code className="rounded-[3px] border border-border bg-muted px-1.5 py-[1px] font-mono text-[14px]">MCP</code>, and <code className="rounded-[3px] border border-border bg-muted px-1.5 py-[1px] font-mono text-[14px]">Next.js</code>. Before that, 1.5 years shipping logistics infrastructure at <strong>Shipmnts</strong>.
