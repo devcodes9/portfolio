@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-5xl px-6 pt-7 pb-20 sm:px-10">
+    <div className="mx-auto max-w-[1100px] px-6 pt-7 pb-20 sm:px-10">
       <div className="max-w-3xl space-y-4 pb-12 pt-4 text-[15px] leading-[1.7] text-foreground/85">
         <p>
           I&apos;m Dev Dalia, an AI engineer based in Surat, India. I build

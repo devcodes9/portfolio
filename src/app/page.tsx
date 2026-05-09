@@ -15,7 +15,7 @@ export default async function Home() {
   });
 
   return (
-    <div className="mx-auto max-w-5xl px-6 sm:px-10">
+    <div className="mx-auto max-w-[1100px] px-6 sm:px-10">
       <Hero />
 
       <SectionHeader label="Experience" count="5 years" />
