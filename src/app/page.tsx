@@ -7,12 +7,9 @@ import Link from "next/link";
 
 export default async function Home() {
   const allPosts = await getContentList("writing");
-  // variant-E lists shipped posts before in-progress drafts
-  const posts = [...allPosts].sort((a, b) => {
-    const aWip = a.status === "wip" ? 1 : 0;
-    const bWip = b.status === "wip" ? 1 : 0;
-    return aWip - bWip;
-  });
+  // Hide WIP drafts from the public list. Stubs stay in content/writing/
+  // and become visible once their frontmatter status flips to "shipped".
+  const posts = allPosts.filter((p) => p.status !== "wip");
 
   return (
     <div className="mx-auto max-w-[1100px] px-6 sm:px-10">
@@ -28,11 +25,9 @@ export default async function Home() {
       <section className="pb-18">
         <ul className="divide-y divide-border">
           {posts.map((post, index) => {
-            const status = post.status === "wip" ? "In progress" : "Shipped";
+            const status = "Shipped";
             const statusClass =
-              post.status === "wip"
-                ? "border-border text-muted-foreground"
-                : "border-green-700 text-green-700 dark:border-green-400 dark:text-green-400";
+              "border-green-700 text-green-700 dark:border-green-400 dark:text-green-400";
             return (
               <li key={post.slug} className="grid grid-cols-[36px_1fr_auto] gap-4 py-4">
                 <span className="pt-0.5 text-[13px] font-mono text-muted-foreground">
