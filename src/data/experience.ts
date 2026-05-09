@@ -52,5 +52,6 @@ export const experience: ExperienceEntry[] = [
     type: "Internship",
     summary: "Backend + ML at a mobility startup (formerly Flow Mobility).",
     impact: "Optimized a routing algorithm to run 17% faster. Built backend on Firebase Cloud Functions. Contributed to a real-time admin dashboard with Node.js + React.",
+    url: "https://www.meiro.in/",
   },
 ];
