@@ -1,17 +1,14 @@
 import { projects } from "@/data/projects";
-import Link from "next/link";
 
 export function Projects() {
   return (
     <section id="projects" className="pb-18">
       <div className="grid gap-5 sm:grid-cols-2">
         {projects.map((project) => {
-          const detailHref =
-            project.slug === "side-projects" ? "/work" : `/work/${project.slug}`;
           return (
             <article
               key={project.slug}
-              className={`group rounded-[10px] border border-border bg-card px-5 py-5 transition hover:-translate-y-px hover:border-foreground ${
+              className={`rounded-[10px] border border-border bg-card px-5 py-5 transition hover:-translate-y-px hover:border-foreground ${
                 project.spanFull ? "sm:col-span-2" : ""
               }`}
             >
@@ -19,12 +16,9 @@ export function Projects() {
                 <span className="inline-flex h-7 w-7 items-center justify-center rounded-[7px] bg-foreground text-background text-[12px] font-mono font-semibold">
                   {project.monogram}
                 </span>
-                <Link
-                  href={detailHref}
-                  className="text-[16px] font-semibold text-foreground hover:text-[var(--accent-warm)]"
-                >
+                <h3 className="text-[16px] font-semibold text-foreground">
                   {project.title}
-                </Link>
+                </h3>
                 {project.featured && (
                   <span className="ml-auto rounded-[3px] bg-foreground px-2 py-1 text-[9px] font-mono uppercase tracking-[0.16em] text-background">
                     Featured
