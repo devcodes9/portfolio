@@ -15,7 +15,7 @@ export function Hero() {
           <p className="mt-5 text-[13px] font-mono uppercase tracking-[0.06em] text-muted-foreground">
             Founding AI Engineer · BuildwayAI · Surat, India
           </p>
-          <p className="mt-7 max-w-[62ch] text-[17px] leading-[1.55] text-foreground/90">
+          <p className="mt-7 max-w-[560px] text-[17px] leading-[1.55] text-foreground/90">
             I build with LLMs for a living. Right now: <strong>Alawyer</strong>, an AI legal research platform for the Austrian market at <strong>BuildwayAI</strong>. Mostly <code className="rounded-[3px] border border-border bg-muted px-1.5 py-[1px] font-mono text-[14px]">TypeScript</code>, <code className="rounded-[3px] border border-border bg-muted px-1.5 py-[1px] font-mono text-[14px]">Claude API</code>, <code className="rounded-[3px] border border-border bg-muted px-1.5 py-[1px] font-mono text-[14px]">MCP</code>, and <code className="rounded-[3px] border border-border bg-muted px-1.5 py-[1px] font-mono text-[14px]">Next.js</code>. Before that, 1.5 years shipping logistics infrastructure at <strong>Shipmnts</strong>. I write about the craft of building with LLMs.
           </p>
           <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[12px] font-mono uppercase tracking-[0.08em] text-muted-foreground">
