@@ -3,7 +3,7 @@ import Image from "next/image";
 export function Hero() {
   return (
     <section className="pt-7 pb-18">
-      <div className="grid items-end gap-10 sm:grid-cols-[1fr_200px]">
+      <div className="grid items-end gap-14 sm:grid-cols-[1fr_200px]">
         <div>
           <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
             dev.dalia — engineer + writing + open source
