@@ -23,7 +23,7 @@ export default async function Home() {
       <SectionHeader label="Projects" count="5 shipped" />
       <Projects />
 
-      <SectionHeader label="Writing" count={`${posts.length} posts`} />
+      <SectionHeader label="Writing" count={`${posts.length} ${posts.length === 1 ? "post" : "posts"}`} />
       <section className="pb-18">
         <ul className="divide-y divide-border">
           {posts.map((post, index) => {
@@ -52,7 +52,7 @@ export default async function Home() {
         </ul>
       </section>
 
-      <SectionHeader label="Hackathons" count={`${hackathons.length} wins`} />
+      <SectionHeader label="Hackathons" count={`${hackathons.length} ${hackathons.length === 1 ? "win" : "wins"}`} />
       <Hackathons />
 
       <SectionHeader label="Open Source" count="12 PRs · 3 repos" />
