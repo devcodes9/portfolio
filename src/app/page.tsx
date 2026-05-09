@@ -6,7 +6,13 @@ import { SectionHeader } from "@/components/section-header";
 import Link from "next/link";
 
 export default async function Home() {
-  const posts = await getContentList("writing");
+  const allPosts = await getContentList("writing");
+  // variant-E lists shipped posts before in-progress drafts
+  const posts = [...allPosts].sort((a, b) => {
+    const aWip = a.status === "wip" ? 1 : 0;
+    const bWip = b.status === "wip" ? 1 : 0;
+    return aWip - bWip;
+  });
 
   return (
     <div className="mx-auto max-w-5xl px-6 sm:px-10">
