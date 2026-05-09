@@ -1,4 +1,14 @@
-export const experience = [
+export type ExperienceEntry = {
+  company: string;
+  role: string;
+  period: string;
+  type: "Full-time" | "Freelance" | "Internship" | "Extracurricular";
+  summary: string;
+  impact: string;
+  url?: string;
+};
+
+export const experience: ExperienceEntry[] = [
   {
     company: "BuildwayAI",
     role: "Founding AI Engineer",
@@ -6,6 +16,7 @@ export const experience = [
     type: "Full-time",
     summary: "Building Alawyer, an AI legal research platform for the Austrian legal market.",
     impact: "Architecting agentic workflows with Claude API + MCP. Custom retrieval pipelines over RIS legal databases. Langfuse for LLM observability.",
+    url: "https://buildway.ai/",
   },
   {
     company: "Shipmnts",
@@ -14,6 +25,7 @@ export const experience = [
     type: "Full-time",
     summary: "Built core platform features for a logistics SaaS product.",
     impact: "Designed and shipped the Activity Service, Shipmnts' communication backbone for chats, emails, and SNS/SES notifications. Ruby on Rails + GraphQL + Postgres.",
+    url: "https://shipmnts.com/",
   },
   {
     company: "Zeiierman Trading",
@@ -22,6 +34,7 @@ export const experience = [
     type: "Freelance",
     summary: "Trading analytics tooling at zeiierman.com.",
     impact: "Real-time data pipelines and API integrations. Python, Node.js, Postgres.",
+    url: "https://zeiierman.com/",
   },
   {
     company: "OneAssure",
@@ -30,6 +43,7 @@ export const experience = [
     type: "Internship",
     summary: "Insurtech platform features. First production-shipping experience.",
     impact: "React + Node.js + MongoDB.",
+    url: "https://oneassure.in/",
   },
   {
     company: "Encode · PDEU",
@@ -38,5 +52,6 @@ export const experience = [
     type: "Extracurricular",
     summary: "Led the technical team of PDEU's Computer Science club.",
     impact: "Organized hackathons, ran workshops on web/mobile/backend, mentored juniors.",
+    url: "https://pdpu.ac.in/",
   },
 ];
