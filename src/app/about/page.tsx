@@ -4,7 +4,7 @@ import { experience } from "@/data/experience";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — Dev Dalia",
+  title: "About · Dev Dalia",
   description:
     "AI engineer at BuildwayAI. B.Tech from PDEU. Building with TypeScript, Next.js, and Claude.",
 };
@@ -24,7 +24,7 @@ export default function AboutPage() {
           >
             BuildwayAI
           </a>
-          {" "}(Vienna), building Alawyer — an AI legal research platform
+          {" "}(Vienna), building Alawyer, an AI legal research platform
           for the Austrian market.
         </p>
         <p>
@@ -50,7 +50,7 @@ export default function AboutPage() {
         </p>
         <p>
           B.Tech in Computer Engineering from PDEU (9.81 CGPA). Led the tech
-          team at Encode (CS club). Won DotSlash 7.0 — one of Gujarat&apos;s
+          team at Encode (CS club). Won DotSlash 7.0, one of Gujarat&apos;s
           largest hackathons.
         </p>
       </div>
@@ -104,7 +104,7 @@ export default function AboutPage() {
 
       <section className="pb-20">
         <p className="text-[15px] leading-[1.7] text-foreground/85">
-          Open for anything — freelance, collaboration, an idea you want to bounce, or just a chat.{" "}
+          Open for anything: freelance, collaboration, an idea you want to bounce, or just a chat.{" "}
           <a
             href="https://cal.com/devdalia/30min"
             target="_blank"

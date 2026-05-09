@@ -4,7 +4,7 @@ import { projects } from "@/data/projects";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Work — Dev Dalia",
+  title: "Work · Dev Dalia",
   description:
     "Projects in AI engineering, full-stack development, and side projects shipped over the years.",
 };

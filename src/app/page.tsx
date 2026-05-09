@@ -60,7 +60,7 @@ export default async function Home() {
 
       <section className="border-t border-border pt-8 pb-20">
         <p className="text-[15px] leading-[1.6] text-foreground/85">
-          Open for anything — freelance, collaboration, an idea you want to bounce, or just a chat.{" "}
+          Open for anything: freelance, collaboration, an idea you want to bounce, or just a chat.{" "}
           <a
             href="https://cal.com/devdalia/30min"
             target="_blank"
