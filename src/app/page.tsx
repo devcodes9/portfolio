@@ -2,7 +2,9 @@ import { getContentList } from "@/lib/content";
 import { Hero } from "@/components/hero";
 import { Experience } from "@/components/experience";
 import { Projects } from "@/components/projects";
+import { Hackathons } from "@/components/hackathons";
 import { SectionHeader } from "@/components/section-header";
+import { hackathons } from "@/data/hackathons";
 import Link from "next/link";
 
 export default async function Home() {
@@ -49,6 +51,9 @@ export default async function Home() {
           })}
         </ul>
       </section>
+
+      <SectionHeader label="Hackathons" count={`${hackathons.length} wins`} />
+      <Hackathons />
 
       <SectionHeader label="Open Source" count="12 PRs · 3 repos" />
       <section className="pb-20">
