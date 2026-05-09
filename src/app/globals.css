@@ -123,15 +123,15 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply scroll-smooth;
+  }
   body {
-    @apply bg-background text-foreground font-normal;
+    @apply bg-background text-foreground font-sans font-normal;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "ss02", "ss03";
-  }
-  html {
-    @apply font-sans scroll-smooth;
   }
 }
 
