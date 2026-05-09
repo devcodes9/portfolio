@@ -1,7 +1,6 @@
 import { getContentList } from "@/lib/content";
 import { Hero } from "@/components/hero";
 import { Experience } from "@/components/experience";
-import { Extracurriculars } from "@/components/extracurriculars";
 import { Projects } from "@/components/projects";
 import { Hackathons } from "@/components/hackathons";
 import { SectionHeader } from "@/components/section-header";
@@ -21,7 +20,6 @@ export default async function Home() {
 
       <SectionHeader label="Experience" count={`${experience.length} roles`} />
       <Experience />
-      <Extracurriculars />
 
       <SectionHeader label="Projects" count="5 shipped" />
       <Projects />

@@ -1,6 +1,5 @@
 import { SectionHeader } from "@/components/section-header";
 import { Experience } from "@/components/experience";
-import { Extracurriculars } from "@/components/extracurriculars";
 import { experience } from "@/data/experience";
 import type { Metadata } from "next";
 
@@ -58,7 +57,6 @@ export default function AboutPage() {
 
       <SectionHeader label="Experience" count={`${experience.length} roles`} />
       <Experience />
-      <Extracurriculars />
 
       <SectionHeader label="Contact" count="4 channels" />
       <section className="pb-10">
