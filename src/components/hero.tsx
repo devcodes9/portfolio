@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="pt-32 pb-18">
+    <section className="pt-7 pb-18">
       <div className="grid items-end gap-10 sm:grid-cols-[1fr_200px]">
         <div>
           <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
-            stripe.dev — engineer + writing + open source
+            dev.dalia — engineer + writing + open source
           </p>
           <h1 className="mt-4 text-[clamp(56px,6.6vw,80px)] font-bold leading-[0.96] tracking-[-0.035em]">
             Hi, I&apos;m
