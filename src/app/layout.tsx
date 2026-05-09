@@ -19,18 +19,18 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dev Dalia — AI Engineer",
+  title: "Dev Dalia · AI Engineer",
   description:
     "AI engineer. I build things with LLMs and write about what I learn.",
   openGraph: {
-    title: "Dev Dalia — AI Engineer",
+    title: "Dev Dalia · AI Engineer",
     description:
       "AI engineer. I build things with LLMs and write about what I learn.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dev Dalia — AI Engineer",
+    title: "Dev Dalia · AI Engineer",
     description:
       "AI engineer. I build things with LLMs and write about what I learn.",
     creator: "@devcodes9",
