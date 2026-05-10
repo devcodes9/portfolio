@@ -96,7 +96,7 @@ export default function AboutPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              X / @devcodes9
+              X
             </a>
           </li>
         </ul>

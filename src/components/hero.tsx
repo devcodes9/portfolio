@@ -13,12 +13,12 @@ export function Hero() {
             Founding AI Engineer · BuildwayAI · Europe · Remote
           </p>
           <p className="mt-7 max-w-[560px] text-[17px] leading-[1.55] text-foreground/90">
-            I build with LLMs for a living. Right now: <strong>Alawyer</strong>, an AI legal research platform for the Austrian market at <strong>BuildwayAI</strong>. Mostly <code className="rounded-[3px] border border-border bg-muted px-1.5 py-[1px] font-mono text-[14px]">TypeScript</code>, <code className="rounded-[3px] border border-border bg-muted px-1.5 py-[1px] font-mono text-[14px]">Claude API</code>, <code className="rounded-[3px] border border-border bg-muted px-1.5 py-[1px] font-mono text-[14px]">MCP</code>, and <code className="rounded-[3px] border border-border bg-muted px-1.5 py-[1px] font-mono text-[14px]">Next.js</code>. Before that, 1.5 years shipping logistics infrastructure at <strong>Shipmnts</strong>.
+            I build with LLMs for a living. Right now: <strong>Alawyer</strong>, an AI legal research platform for the Austrian market at <strong>BuildwayAI</strong>. Before that, 1.5 years shipping logistics infrastructure at <strong>Shipmnts</strong>.
           </p>
           <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-[12px] font-mono uppercase tracking-[0.08em] text-muted-foreground">
             <a className="inline-flex min-h-11 items-center underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]" href="https://github.com/devcodes9" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a className="inline-flex min-h-11 items-center underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]" href="https://linkedin.com/in/devdalia" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a className="inline-flex min-h-11 items-center underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]" href="https://x.com/devcodes9" target="_blank" rel="noopener noreferrer">X / @devcodes9</a>
+            <a className="inline-flex min-h-11 items-center underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]" href="https://x.com/devcodes9" target="_blank" rel="noopener noreferrer">X</a>
             <a className="inline-flex min-h-11 items-center underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]" href="mailto:devdalia9@gmail.com">Email</a>
           </div>
         </div>
