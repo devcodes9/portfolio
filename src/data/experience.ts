@@ -50,7 +50,7 @@ export const experience: ExperienceEntry[] = [
     role: "Backend / ML Engineer Intern",
     period: "Oct - Dec 2021",
     type: "Internship",
-    summary: "Backend + ML at a mobility startup (formerly Flow Mobility).",
+    summary: "Backend + ML at a mobility startup.",
     impact: "Optimized a routing algorithm to run 17% faster. Built backend on Firebase Cloud Functions. Contributed to a real-time admin dashboard with Node.js + React.",
     url: "https://www.meiro.in/",
   },
