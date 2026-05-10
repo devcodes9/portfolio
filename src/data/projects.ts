@@ -27,7 +27,7 @@ export const projects: readonly Project[] = [
     monogram: "W",
     title: "Web Research Agent",
     summary: "Autonomous research assistant with grounded citations. Searches, reads, synthesizes web sources.",
-    stack: ["TypeScript", "Vercel AI SDK", "E2B", "Next.js"],
+    stack: ["Python", "FastAPI", "Langchain", "OpenAI", "React"],
     status: "live",
     github: "https://github.com/devcodes9/web-research-agent",
   },
