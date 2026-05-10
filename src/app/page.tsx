@@ -58,7 +58,7 @@ export default async function Home() {
 
       <section className="border-t border-border pt-8 pb-20">
         <p className="text-[15px] leading-[1.6] text-foreground/85">
-          I love meeting other builders, especially in AI and dev tools. Working on something? Hiring? Want a collaborator? Or just curious about anything I've shipped?{" "}
+          I love meeting other cool people. Working on something? Hiring? Want a collaborator? Just curious? Or want to chat?{" "}
           <a
             href="https://cal.com/devdalia/30min"
             target="_blank"
