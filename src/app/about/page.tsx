@@ -98,6 +98,16 @@ export default function AboutPage() {
               X
             </a>
           </li>
+          <li>
+            <a
+              className="relative inline-flex items-center text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)] before:absolute before:inset-x-0 before:-inset-y-[14px] before:content-['']"
+              href="https://dev-dalia-docs.s3.ap-south-1.amazonaws.com/DEV_DALIA_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
+          </li>
         </ul>
       </section>
 
