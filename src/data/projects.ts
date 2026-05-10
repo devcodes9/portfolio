@@ -53,7 +53,7 @@ export const projects: readonly Project[] = [
     slug: "side-projects",
     monogram: "+",
     title: "EatEase, LocalUp, Devobase, and other side projects",
-    summary: "Food subscription web app, local commerce marketplace, and a few other things I built to learn. Full list at /work.",
+    summary: "Food subscription web app, local commerce marketplace, and a few other things I built to learn.",
     stack: ["Next.js", "React", "Firebase", "Stripe", "MongoDB"],
     status: "shipped",
     spanFull: true,
