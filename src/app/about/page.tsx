@@ -103,16 +103,16 @@ export default function AboutPage() {
 
       <section className="pb-20">
         <p className="text-[15px] leading-[1.7] text-foreground/85">
-          Open for anything: freelance, collaboration, an idea you want to bounce, or just a chat.{" "}
+          I love meeting other builders, especially in AI and dev tools. Working on something? Hiring? Want a collaborator? Or just curious about anything I&apos;ve shipped?{" "}
           <a
             href="https://cal.com/devdalia/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground underline underline-offset-[3px] decoration-[var(--accent-warm)] hover:text-[var(--accent-warm)]"
           >
-            Book 30 minutes ↗
+            Let&apos;s chat ↗
           </a>
-          . Free. No agenda required.
+          .
         </p>
       </section>
     </div>
