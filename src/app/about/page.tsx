@@ -110,7 +110,7 @@ export default function AboutPage() {
             rel="noopener noreferrer"
             className="text-foreground underline underline-offset-[3px] decoration-[var(--accent-warm)] hover:text-[var(--accent-warm)]"
           >
-            Let&apos;s chat ↗
+            Hop on a call ↗
           </a>
           .
         </p>
