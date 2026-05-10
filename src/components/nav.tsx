@@ -65,7 +65,7 @@ export function Nav() {
             aria-label="Open navigation menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
-            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border border-foreground/30 font-mono text-[11px] uppercase tracking-[0.12em] sm:hidden"
+            className="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-md border border-foreground/30 font-mono text-[11px] uppercase tracking-[0.12em] sm:hidden"
           >
             Menu
           </button>
