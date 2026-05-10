@@ -17,32 +17,34 @@ export function Projects() {
             <p className="mb-4 text-[14px] leading-[1.55] text-foreground/85">
               {project.summary}
             </p>
-            <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border pt-2">
-              <p className="text-[11px] font-mono tracking-[0.06em] text-muted-foreground">
+            <div className="mt-auto flex items-end justify-between gap-4 border-t border-border pt-2">
+              <p className="min-w-0 flex-1 text-[11px] font-mono leading-relaxed tracking-[0.06em] text-muted-foreground">
                 {project.stack.join(" · ")}
               </p>
-              <div className="ml-auto flex items-center gap-3 text-[11px] font-mono uppercase tracking-[0.08em]">
-                {project.live && (
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
-                  >
-                    Live ↗
-                  </a>
-                )}
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
-                  >
-                    GitHub ↗
-                  </a>
-                )}
-              </div>
+              {(project.live || project.github) && (
+                <div className="flex shrink-0 items-center gap-3 text-[11px] font-mono uppercase tracking-[0.08em]">
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
+                    >
+                      Live ↗
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
+                    >
+                      GitHub ↗
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </article>
         ))}
