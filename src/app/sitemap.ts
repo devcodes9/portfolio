@@ -1,11 +1,10 @@
 import { getContentSlugs } from "@/lib/content";
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://devdalia.com";
+const BASE_URL = "https://dev-dalia.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const writingSlugs = getContentSlugs("writing");
-  const workSlugs = getContentSlugs("work");
   const notesSlugs = getContentSlugs("notes");
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -23,13 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const workRoutes = workSlugs.map((slug) => ({
-    url: `${BASE_URL}/work/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
-
   const notesRoutes = notesSlugs.map((slug) => ({
     url: `${BASE_URL}/notes/${slug}`,
     lastModified: new Date(),
@@ -37,5 +29,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...writingRoutes, ...workRoutes, ...notesRoutes];
+  return [...staticRoutes, ...writingRoutes, ...notesRoutes];
 }

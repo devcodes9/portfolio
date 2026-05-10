@@ -19,6 +19,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dev-dalia.com"),
   title: "Dev Dalia · AI Engineer",
   description:
     "AI engineer. I build things with LLMs and write about what I learn.",
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
     description:
       "AI engineer. I build things with LLMs and write about what I learn.",
     type: "website",
+    url: "https://dev-dalia.com",
   },
   twitter: {
     card: "summary_large_image",

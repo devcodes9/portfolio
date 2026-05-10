@@ -1,6 +1,6 @@
 import { getContentList } from "@/lib/content";
 
-const BASE_URL = "https://devdalia.com";
+const BASE_URL = "https://dev-dalia.com";
 
 export async function GET() {
   const posts = await getContentList("writing");
