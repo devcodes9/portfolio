@@ -62,7 +62,7 @@ export default function AboutPage() {
         <ul className="flex flex-wrap gap-x-6 gap-y-3 text-[12px] font-mono uppercase tracking-[0.08em] text-muted-foreground">
           <li>
             <a
-              className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
+              className="relative inline-flex items-center text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)] before:absolute before:inset-x-0 before:-inset-y-[14px] before:content-['']"
               href="mailto:devdalia9@gmail.com"
             >
               Email
@@ -70,7 +70,7 @@ export default function AboutPage() {
           </li>
           <li>
             <a
-              className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
+              className="relative inline-flex items-center text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)] before:absolute before:inset-x-0 before:-inset-y-[14px] before:content-['']"
               href="https://github.com/devcodes9"
               target="_blank"
               rel="noopener noreferrer"
@@ -80,7 +80,7 @@ export default function AboutPage() {
           </li>
           <li>
             <a
-              className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
+              className="relative inline-flex items-center text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)] before:absolute before:inset-x-0 before:-inset-y-[14px] before:content-['']"
               href="https://linkedin.com/in/devdalia"
               target="_blank"
               rel="noopener noreferrer"
@@ -90,7 +90,7 @@ export default function AboutPage() {
           </li>
           <li>
             <a
-              className="text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]"
+              className="relative inline-flex items-center text-foreground underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)] before:absolute before:inset-x-0 before:-inset-y-[14px] before:content-['']"
               href="https://x.com/devcodes9"
               target="_blank"
               rel="noopener noreferrer"

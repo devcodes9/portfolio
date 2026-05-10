@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="pt-7 pb-14">
+    <section className="pt-7 pb-18">
       <div className="grid items-start gap-14 sm:grid-cols-[1fr_200px]">
         <div>
           <h1 className="text-[clamp(56px,6.6vw,80px)] font-bold leading-[0.96] tracking-[-0.035em]">
@@ -16,10 +16,10 @@ export function Hero() {
             I build with LLMs for a living. Right now: <strong>Alawyer</strong>, an AI legal research platform for the Austrian market at <strong>BuildwayAI</strong>. Before that, 1.5 years shipping logistics infrastructure at <strong>Shipmnts</strong>.
           </p>
           <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-[12px] font-mono uppercase tracking-[0.08em] text-muted-foreground">
-            <a className="inline-flex min-h-11 items-center underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]" href="https://github.com/devcodes9" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a className="inline-flex min-h-11 items-center underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]" href="https://linkedin.com/in/devdalia" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a className="inline-flex min-h-11 items-center underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]" href="https://x.com/devcodes9" target="_blank" rel="noopener noreferrer">X</a>
-            <a className="inline-flex min-h-11 items-center underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)]" href="mailto:devdalia9@gmail.com">Email</a>
+            <a className="relative inline-flex items-center underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)] before:absolute before:inset-x-0 before:-inset-y-[14px] before:content-['']" href="https://github.com/devcodes9" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a className="relative inline-flex items-center underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)] before:absolute before:inset-x-0 before:-inset-y-[14px] before:content-['']" href="https://linkedin.com/in/devdalia" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a className="relative inline-flex items-center underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)] before:absolute before:inset-x-0 before:-inset-y-[14px] before:content-['']" href="https://x.com/devcodes9" target="_blank" rel="noopener noreferrer">X</a>
+            <a className="relative inline-flex items-center underline underline-offset-[3px] decoration-border hover:text-[var(--accent-warm)] hover:decoration-[var(--accent-warm)] before:absolute before:inset-x-0 before:-inset-y-[14px] before:content-['']" href="mailto:devdalia9@gmail.com">Email</a>
           </div>
         </div>
         <div className="flex flex-col items-start gap-3 sm:items-end">
