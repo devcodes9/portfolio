@@ -4,8 +4,6 @@ import { Experience } from "@/components/experience";
 import { Projects } from "@/components/projects";
 import { Hackathons } from "@/components/hackathons";
 import { SectionHeader } from "@/components/section-header";
-import { experience } from "@/data/experience";
-import { hackathons } from "@/data/hackathons";
 import Link from "next/link";
 
 export default async function Home() {
@@ -18,13 +16,13 @@ export default async function Home() {
     <div className="mx-auto max-w-[1100px] px-6 sm:px-10">
       <Hero />
 
-      <SectionHeader label="Experience" count={`${experience.length} roles`} />
+      <SectionHeader label="Experience" />
       <Experience />
 
-      <SectionHeader label="Projects" count="5 shipped" />
+      <SectionHeader label="Projects" />
       <Projects />
 
-      <SectionHeader label="Writing" count={`${posts.length} ${posts.length === 1 ? "post" : "posts"}`} />
+      <SectionHeader label="Writing" />
       <section className="pb-18">
         <ul className="divide-y divide-border">
           {posts.map((post, index) => (
@@ -43,10 +41,10 @@ export default async function Home() {
         </ul>
       </section>
 
-      <SectionHeader label="Hackathons" count={`${hackathons.length} ${hackathons.length === 1 ? "win" : "wins"}`} />
+      <SectionHeader label="Hackathons" />
       <Hackathons />
 
-      <SectionHeader label="Open Source" count="12 PRs · 3 repos" />
+      <SectionHeader label="Open Source" />
       <section className="pb-18">
         <p className="text-[15px] leading-[1.6] text-foreground/85">
           Merged contributions in{" "}

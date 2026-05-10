@@ -1,6 +1,5 @@
 import { SectionHeader } from "@/components/section-header";
 import { Experience } from "@/components/experience";
-import { experience } from "@/data/experience";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -55,10 +54,10 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <SectionHeader label="Experience" count={`${experience.length} roles`} />
+      <SectionHeader label="Experience" />
       <Experience />
 
-      <SectionHeader label="Contact" count="4 channels" />
+      <SectionHeader label="Contact" />
       <section className="pb-10">
         <ul className="flex flex-wrap gap-x-6 gap-y-3 text-[12px] font-mono uppercase tracking-[0.08em] text-muted-foreground">
           <li>
