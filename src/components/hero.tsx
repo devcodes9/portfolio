@@ -3,7 +3,7 @@ import Image from "next/image";
 export function Hero() {
   return (
     <section className="pt-7 pb-20">
-      <div className="grid items-end gap-14 sm:grid-cols-[1fr_200px]">
+      <div className="grid items-start gap-14 sm:grid-cols-[1fr_200px]">
         <div>
           <h1 className="text-[clamp(56px,6.6vw,80px)] font-bold leading-[0.96] tracking-[-0.035em]">
             Hi, I&apos;m
