@@ -15,7 +15,7 @@ export const experience: ExperienceEntry[] = [
     period: "Aug 2025 - Present",
     type: "Full-time",
     summary: "Building Alawyer, an AI legal research platform for the Austrian legal market.",
-    impact: "Architecting agentic workflows with Claude API + MCP. Custom retrieval pipelines over RIS legal databases. Langfuse for LLM observability.",
+    impact: "Migrated the chat runtime to Claude Agent SDK + MCP inside E2B sandboxes (~80K LOC). Hybrid vector + ILIKE retrieval over 100K+ Austrian legal documents with byte-exact PDF citation highlighting. Stripe billing, better-auth + OAuth2 + RBAC, admin role overlays. Langfuse + Posthog observability. Also: Chrome extension, mobile backends, ChatGPT MCP app.",
     url: "https://buildway.ai/",
   },
   {
