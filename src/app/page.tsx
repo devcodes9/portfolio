@@ -4,6 +4,8 @@ import { Experience } from "@/components/experience";
 import { Projects } from "@/components/projects";
 import { Hackathons } from "@/components/hackathons";
 import { SectionHeader } from "@/components/section-header";
+import { JsonLd } from "@/components/json-ld";
+import { homepageGraph } from "@/lib/structured-data";
 import Link from "next/link";
 
 export default async function Home() {
@@ -14,6 +16,7 @@ export default async function Home() {
 
   return (
     <div className="mx-auto max-w-[1100px] px-6 sm:px-10">
+      <JsonLd data={homepageGraph()} />
       <Hero />
 
       <SectionHeader label="Experience" />
