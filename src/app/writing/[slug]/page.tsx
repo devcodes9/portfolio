@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Toc, TocMobile } from "@/components/toc";
 import { JsonLd } from "@/components/json-ld";
 import { blogPostingSchema } from "@/lib/structured-data";
+import { siteConfig } from "@/lib/config";
 
 export async function generateStaticParams() {
   const slugs = getContentSlugs("writing");
@@ -23,7 +24,7 @@ export async function generateMetadata({
   const { date, updated, tags } = result.frontmatter;
 
   return {
-    title: `${result.frontmatter.title} · Dev Dalia`,
+    title: result.frontmatter.title,
     description: result.frontmatter.description,
     alternates: { canonical: `/writing/${slug}` },
     keywords: Array.isArray(tags) ? tags : undefined,
@@ -76,13 +77,47 @@ export default async function WritingPost({
 
         <div className="prose-custom">{result.content}</div>
 
-        <footer className="mt-16 pt-8 border-t border-border">
+        <footer className="mt-16 pt-8 border-t border-border flex flex-wrap items-center justify-between gap-x-6 gap-y-3 text-[13px]">
           <Link
             href="/writing"
-            className="text-[14px] text-muted-foreground hover:text-foreground transition-colors"
+            className="text-muted-foreground hover:text-foreground transition-colors"
           >
             ← Back to writing
           </Link>
+          <nav className="flex items-center gap-5 text-muted-foreground">
+            <a
+              href={siteConfig.social.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              X
+            </a>
+            <a
+              href={siteConfig.social.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              GitHub
+            </a>
+            <a
+              href={siteConfig.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://cal.com/devdalia/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              Hop on a call ↗
+            </a>
+          </nav>
         </footer>
       </article>
 
