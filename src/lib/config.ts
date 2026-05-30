@@ -1,7 +1,8 @@
 export const siteConfig = {
   name: "Dev Dalia",
   title: "Dev Dalia · AI Engineer",
-  description: "AI engineer. I build things with LLMs and write about what I learn.",
+  description:
+    "Founding AI engineer building AI systems and full-stack SaaS: agent runtimes, retrieval, orchestration, observability, auth + payment infra, security.",
   // Longer, keyword-grounded description for search + LLM retrieval. Names the
   // concrete things a query might match on (employer, stack, location) without
   // turning into keyword soup.
