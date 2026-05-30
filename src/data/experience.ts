@@ -3,6 +3,7 @@ export type ExperienceEntry = {
   role: string;
   period: string;
   type: "Full-time" | "Freelance" | "Internship";
+  location: string;
   summary: string;
   impact: string;
   url?: string;
@@ -14,6 +15,7 @@ export const experience: ExperienceEntry[] = [
     role: "Founding AI Engineer",
     period: "Aug 2025 - Present",
     type: "Full-time",
+    location: "Remote · Austria",
     summary: "Building Alawyer, an AI legal research platform for the Austrian legal market.",
     impact: "Migrated the chat runtime from custom LLM orchestration (Vercel AI SDK + agent chaining) to Claude Agent SDK + MCP inside E2B sandboxes. Retrieval over 100K+ Austrian legal documents with byte-exact citation highlighting. Stripe billing, better-auth + OAuth2 + RBAC, admin role overlays. Langfuse + Posthog observability. Also: Chrome extension, mobile backends, ChatGPT MCP app.",
     url: "https://buildway.ai/",
@@ -23,6 +25,7 @@ export const experience: ExperienceEntry[] = [
     role: "Full-Stack Software Engineer",
     period: "Jan 2024 - Aug 2025",
     type: "Full-time",
+    location: "Ahmedabad",
     summary: "Built core platform features for a logistics SaaS product.",
     impact: "Designed and shipped the Activity Service, Shipmnts' communication backbone for chats, emails, and SNS/SES notifications. Ruby on Rails + GraphQL + Postgres.",
     url: "https://shipmnts.com/",
@@ -32,6 +35,7 @@ export const experience: ExperienceEntry[] = [
     role: "Backend Developer",
     period: "2023 - 2024",
     type: "Freelance",
+    location: "Remote · Sweden",
     summary: "Trading analytics tooling at zeiierman.com.",
     impact: "Real-time data pipelines and API integrations. Python, Node.js, Postgres.",
     url: "https://zeiierman.com/",
@@ -41,6 +45,7 @@ export const experience: ExperienceEntry[] = [
     role: "SDE Intern",
     period: "May - Jul 2023",
     type: "Internship",
+    location: "Bangalore",
     summary: "Insurtech platform features. First production-shipping experience.",
     impact: "React + Node.js + MongoDB.",
     url: "https://oneassure.in/",
@@ -50,6 +55,7 @@ export const experience: ExperienceEntry[] = [
     role: "Backend / ML Engineer Intern",
     period: "Oct - Dec 2021",
     type: "Internship",
+    location: "Remote · Gandhinagar",
     summary: "Backend + ML at a mobility startup.",
     impact: "Optimized a routing algorithm to run 17% faster. Built backend on Firebase Cloud Functions. Contributed to a real-time admin dashboard with Node.js + React.",
     url: "https://www.meiro.in/",

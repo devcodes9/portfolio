@@ -28,6 +28,9 @@ export function Experience() {
               <p className="text-[10px] font-mono uppercase tracking-[0.16em] text-muted-foreground">
                 {item.type}
               </p>
+              <p className="text-[10px] font-mono uppercase tracking-[0.16em] text-muted-foreground/70">
+                {item.location}
+              </p>
             </div>
             <div>
               <h3 className="text-[17px] font-semibold text-foreground">{item.role}</h3>
