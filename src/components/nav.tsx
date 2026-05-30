@@ -34,22 +34,23 @@ export function Nav() {
     "inline-flex min-h-11 items-center gap-2 pl-2 pr-3.5 py-2 text-[11px] font-mono uppercase tracking-[0.1em] text-foreground transition-colors hover:text-[var(--accent-warm)]";
   const keyClass =
     "inline-flex h-[22px] w-[22px] items-center justify-center rounded-[4px] border border-foreground text-[11px] font-semibold leading-none transition-colors";
-  const keyClassActive =
-    "inline-flex h-[22px] w-[22px] items-center justify-center rounded-[4px] border border-foreground bg-foreground text-background text-[11px] font-semibold leading-none transition-colors";
-  const brandClass =
-    "inline-flex min-h-11 items-center px-2 py-2 font-mono text-[11px] uppercase tracking-[0.12em] text-foreground transition-colors hover:text-[var(--accent-warm)]";
-  const brandHomeActive = isActive(pathname, "/");
+  const activeLabelClass = "underline underline-offset-[3px] decoration-foreground";
 
   return (
     <header className="mx-auto max-w-[1100px] px-6 pt-7 sm:px-10">
       <nav className="flex items-center border-y border-foreground py-1.5">
-        {/* Brand / home link (visible on all viewports) */}
+        {/* Brand / home link (visible on all viewports) — DD monogram chip.
+            Fills only when home is the current page, so "filled = current page"
+            stays the single, unambiguous active-state signal across the nav. */}
         <Link
           href="/"
-          aria-current={brandHomeActive ? "page" : undefined}
-          className={`${brandClass} ${brandHomeActive ? "underline underline-offset-[3px] decoration-foreground" : ""}`}
+          aria-label="Dev Dalia — home"
+          aria-current={isActive(pathname, "/") ? "page" : undefined}
+          className="inline-flex min-h-11 items-center px-2 py-2"
         >
-          dev.dalia
+          <span className="inline-flex h-[22px] items-center justify-center rounded-[4px] bg-foreground px-1.5 font-mono text-[11px] font-bold leading-none tracking-[0.06em] text-background">
+            DD
+          </span>
         </Link>
 
         {/* Desktop letterbar */}
@@ -63,8 +64,8 @@ export function Nav() {
                   aria-current={active ? "page" : undefined}
                   className={linkClass}
                 >
-                  <span className={active ? keyClassActive : keyClass}>{link.key}</span>
-                  {link.label}
+                  <span className={keyClass}>{link.key}</span>
+                  <span className={active ? activeLabelClass : undefined}>{link.label}</span>
                 </Link>
               </li>
             );
@@ -99,8 +100,8 @@ export function Nav() {
                     className={`${linkClass} border-b border-border/70`}
                     onClick={() => setMenuOpen(false)}
                   >
-                    <span className={active ? keyClassActive : keyClass}>{link.key}</span>
-                    {link.label}
+                    <span className={keyClass}>{link.key}</span>
+                    <span className={active ? activeLabelClass : undefined}>{link.label}</span>
                   </Link>
                 </li>
               );

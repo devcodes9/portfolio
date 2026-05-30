@@ -1,6 +1,7 @@
 ---
 title: "Engineering the Vibe: Power User Strategies for Claude Code"
 date: "2026-03-28"
+updated: "2026-05-30"
 description: "14 strategies for getting more out of Claude Code, from context management to custom slash commands and parallel subagents."
 tags: ["claude-code", "ai-engineering", "developer-tools"]
 status: "shipped"
@@ -16,7 +17,7 @@ Use cases I've personally used it for outside of coding:
 - Researching medical reports and recommending a course of action for a family member
 - Building a personal finance dashboard
 - Drafting legal research summaries
-- Writing talk proposals (meta!)
+- Writing blog posts (meta!)
 
 **Don't self-limit.** If a task requires thinking, reasoning, and structured output, this tool can handle it. Build tools for yourself. Measure your own finances. Research decisions that matter.
 
@@ -66,15 +67,30 @@ Don't just describe what you want. Give it **authoritative references**. Web sea
 - Search for best practices before implementing
 - Pull the latest docs for a library before writing code against it
 
-Example: When writing a Claude Code skill file, I give it a link to Anthropic's own prompt engineering best practices. It uses that to produce a prompt that's minimal, structured, and actually effective.
+Example: When writing a Claude Code skill file, I give it a link to [Anthropic's own prompt engineering best practices](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview). It uses that to produce a prompt that's minimal, structured, and actually effective.
+
+### Teach It Once: CLAUDE.md and Memory
+
+The naive loop is re-explaining your preferences every session: "use tabs, don't leave comments, here's how our auth works." The power-user loop is to teach it once and never again.
+
+Claude Code reads a `CLAUDE.md` file at the root of your project (plus a global one at `~/.claude/CLAUDE.md`) at the start of every session. Treat it as the agent's long-term memory:
+- **Conventions**: your stack, your naming, your "never do X" rules
+- **Project facts that aren't obvious from the code**: which environment points where, what a domain term means, who owns what
+- **Hard-won corrections**: every time the agent gets something wrong, don't just fix it in the moment, write the rule down
+
+That last point is the real unlock. When the agent makes a mistake, I don't treat it as a one-off correction, I treat it as a missing memory entry. It assumed a capability existed that didn't? Add a rule: *"verify behavior against the source before claiming it exists, never infer."* Now that mistake never recurs, in any future session.
+
+This is meta-learning with a text file. The model doesn't get smarter, but your *configuration* of it does. Over weeks, a good `CLAUDE.md` turns a general assistant into something that already knows your codebase, your constraints, and your scars. The mistakes become training data instead of recurring annoyances.
 
 ## Part 3: Core Workflow - Day-to-Day Usage
 
 ### Plan Mode - Stay in the Driver's Seat
 
-**For general models (Sonnet 4.5/4.6, Haiku):** Always use Plan Mode before letting the agent execute. These models benefit heavily from an explicit planning step before touching code.
+Plan Mode is now a first-class feature in current Claude Code: hit `Shift+Tab` to toggle it, no workarounds needed. I keep my install on the latest version specifically so I get features like this early (more on that in [Stay Updated](#stay-updated---the-early-adopter-edge)).
 
-**For powerful models (Opus 4.6):** They reason through medium-complexity tasks naturally; you may not always need to force Plan Mode. But for large or ambiguous tasks, still invoke it.
+**For general models (Sonnet 4.6, Haiku 4.5):** Always use Plan Mode before letting the agent execute. These models benefit heavily from an explicit planning step before touching code.
+
+**For powerful models (Opus 4.8):** They reason through medium-complexity tasks naturally; you may not always need to force Plan Mode. But for large or ambiguous tasks, still invoke it.
 
 **How to use Plan Mode well:**
 - Don't just hit "plan" and walk away. **Minimize the plan surface**: ask it to ask you clarifying questions first, so you stay involved before any implementation begins.
@@ -82,6 +98,8 @@ Example: When writing a Claude Code skill file, I give it a link to Anthropic's 
 - **Save the plan externally**: Claude Code saves plans internally, but also ask it to write the plan to a dedicated `.md` file (e.g., `plans/feature-x.md`). If the context window fills up or you clear the chat, start a new session and just say *"implement this plan"* and pick up exactly where you left off.
 
 Even for bug fixes, Plan Mode keeps you in the loop. Never let it go fully autonomous on something you haven't mentally approved.
+
+**A prediction:** this may matter less over time. You can already see the trajectory in the split above, the more capable the model, the less it needs planning forced on it. As models get better at holding a complex task in their head and reasoning before they act, explicit Plan Mode may fade from a necessity into a fallback you reach for only on genuinely ambiguous work. The durable skill isn't "always plan," it's *knowing how much steering this particular model needs.*
 
 ### Terminal Logs as Context - The Root Cause Shortcut
 
@@ -114,7 +132,7 @@ This gets you to root cause almost every time. Structured log files are signific
 
 ### Worktrees - Let It Work While You're Away
 
-Claude Code supports **git worktrees**, isolated copies of your repo in separate branches.
+Claude Code supports [**git worktrees**](https://git-scm.com/docs/git-worktree), isolated copies of your repo in separate branches.
 
 This means you can:
 - Kick off a long-running agentic task in a worktree
@@ -149,9 +167,11 @@ The power is that **Claude operates across technical and non-technical decisions
 
 **Skills** are custom slash commands you define in `.claude/skills/`. Each skill is a `.md` file with a prompt that Claude executes when you invoke it.
 
-Why they matter: instead of re-explaining a complex workflow every time, you encode it once. `/review-pr`, `/weekly-plan`, `/commit` — one word triggers a fully structured, repeatable process.
+Why they matter: instead of re-explaining a complex workflow every time, you encode it once. `/review-pr`, `/weekly-plan`, `/commit`: one word triggers a fully structured, repeatable process.
 
-Use skills for any specialized, repeatable task: code reviews, changelog generation, planning docs, deployment checklists. Anything you find yourself describing from scratch more than twice should be a skill.
+Use skills for any specialized, repeatable task: code reviews, changelog generation, planning docs, deployment checklists. Anything you find yourself describing from scratch more than twice should be a skill. In my own setup these aren't hypothetical: I have skills like `changelog-creator`, `slack-composer`, and `weekly-planner` that each encode a whole company-specific workflow into one command.
+
+**You don't have to write every skill yourself.** Skills also ship as installable plugins, and I lean on two heavily. [**superpowers**](https://github.com/obra/superpowers) gives me disciplined workflow skills: brainstorming, test-driven development, systematic debugging, plan-writing. [**gstack**](https://github.com/garrytan/gstack) (Garry Tan's setup) adds a headless browser plus QA, design-review, and ship/deploy skills. Installed skills behave exactly like your own: one slash command, fully structured execution. The win is that you inherit other people's hard-won workflows instead of reinventing them.
 
 **Subagents** are where things get powerful. Claude Code can spawn subagents, each one gets its own fresh context window and runs independently.
 
@@ -167,17 +187,29 @@ Claude Code asks for permission before taking actions: running bash commands, ed
 
 **`--dangerously-skip-permissions`** is the flag you pass when you want Claude to run completely headless, with no prompts at all. The name is honest. Use it deliberately.
 
-Where it shines: **tmux**. Spin up a tmux session, start Claude with `--dangerously-skip-permissions`, give it a task, detach. Claude runs, makes decisions, finishes. You come back to a completed diff. Pair this with worktrees and you have a proper async agent: isolated branch, headless execution, nothing blocking it.
+Where it shines: **tmux**. Spin up a tmux session, start Claude with `--dangerously-skip-permissions`, give it a task, detach. Claude runs, makes decisions, finishes. You come back to a completed diff. Pair this with [worktrees](#worktrees---let-it-work-while-youre-away) and you have a proper async agent: isolated branch, headless execution, nothing blocking it.
 
 The pattern I use: tmux session per task, worktree per session, permissions skipped. Claude works while I work on something else.
 
+### Guardrails: Bound the Blast Radius, Then Grant Autonomy
+
+Skipping permissions only works if the dangerous paths aren't reachable in the first place. The point isn't to trust the agent more, it's to make the irreversible operations impossible to hit by accident. The safest guardrail is the one the agent *can't* cross even if it tries.
+
+How I bound the blast radius before handing over autonomy:
+- **Keep production out of reach.** The agent works against local and staging only. It never holds production database URLs, deploy keys, or live secrets. If it can't connect to prod, it can't break prod.
+- **Don't hand it real credentials.** Anything the agent can read should be treated as potentially logged or echoed, so agent-readable config gets scoped, non-production values.
+- **Route irreversible actions through humans.** Migrations, releases, and destructive operations go through your normal reviewed pipeline, never an autonomous agent run.
+- **Make the safe path the only path.** When the irreversible 5% is fenced off by construction, you can grant broad autonomy on the other 95% without losing sleep.
+
+The principle: agentic speed comes from a *bounded* blast radius, not from trusting the agent more. You move fast everywhere else precisely because the things you can't undo were never on the table.
+
 ### CLI > MCP (for context efficiency)
 
-Both CLI and MCP ultimately call the same underlying API, so the difference isn't network speed. The real cost of MCP is **context window pollution**.
+Both CLI and [MCP](https://modelcontextprotocol.io) ultimately call the same underlying API, so the difference isn't network speed. The real cost of MCP is **context window pollution**.
 
-MCP injects the full schema of every tool the server exposes into the context on every call. GitHub's Copilot MCP server exposes 43 tools. That's ~55,000 tokens loaded before any real work begins. A CLI call costs ~200 tokens. That's a **275x difference in overhead** before you've done anything useful.
+Most MCP clients load the full schema of every tool a server exposes into context upfront. Connect a few servers, each with dozens of tools, and you've burned tens of thousands of tokens before any real work begins. Anthropic's own engineers [make exactly this point](https://www.anthropic.com/engineering/code-execution-with-mcp): loading all tool definitions upfront "slows down agents and increases costs." In one of their examples, loading only the tools actually needed cut a workflow from 150,000 tokens to 2,000, a **98.7% reduction**.
 
-Real-world benchmarks back this up: CLI achieves 33% better token efficiency and 28% higher task completion on the same token budget.
+A CLI call, by contrast, costs a couple hundred tokens of command syntax, and the tool schemas never enter your context at all.
 
 CLI isn't faster at the network level. It's faster at the **context level**. MCP eats your reasoning budget.
 
@@ -203,34 +235,30 @@ This is where everything clicks together. I have a custom skill called `/investi
 
 Claude doesn't ask what that means. It goes to work:
 
-1. **`gh`** — searches open issues and recent PRs touching the Stream module
-2. **`psql`** — queries the database to check stream state
-3. **PostHog CLI** — checks if stream-related events dropped in the last 24 hours
-4. **Playwright** — opens the app, navigates to the stream flow, reproduces the failure
-5. **Reads logs** — cross-references the `logs/` folder from the workspace
-6. **Patches and ships** — writes the fix, runs tests, opens a PR via `gh`
+1. **`gh`**: searches open issues and recent PRs touching the Stream module
+2. **`psql`**: queries the database to check stream state
+3. **PostHog CLI**: checks if stream-related events dropped in the last 24 hours
+4. **Playwright**: opens the app, navigates to the stream flow, reproduces the failure
+5. **Reads logs**: cross-references the `logs/` folder from the workspace
+6. **Patches and ships**: writes the fix, runs tests, opens a PR via `gh`
 
 One natural language command. Six tools. A resolved issue.
+
+```mermaid
+flowchart TD
+  A["/investigate recent issue about Stream"] --> B["gh: open issues + PRs"]
+  A --> C["psql: stream DB state"]
+  A --> D["PostHog: event drop in 24h?"]
+  A --> E["Playwright: reproduce failure"]
+  A --> F["logs/: cross-reference workspace"]
+  B --> G["Hypothesis"]
+  C --> G
+  D --> G
+  E --> G
+  F --> G
+  G --> H["Patch, test, open PR via gh"]
+```
 
 This is Claude acting as the engineer: gathering evidence from multiple systems, forming a hypothesis, and shipping a fix. The skill is the entry point. The tools are the hands.
 
 This is what "Engineering the Vibe" actually means. Not autocomplete. Orchestration.
-
-## Quick Reference
-
-| # | Tip | One-liner |
-|---|-----|-----------|
-| 1 | Not just coding | General LLM. Use it for life, not just sprints. |
-| 2 | Mental model | Smart human, info gap. Clarity = execution. |
-| 3 | `.md` files | LLM-native, human-readable, token-efficient. |
-| 4 | XML tags | Structure complex prompts. Models parse it well. |
-| 5 | Give links | Web search + authoritative refs > instructions alone. |
-| 6 | Plan Mode | Ask questions first. Save the plan externally. |
-| 7 | Logs | Pipe terminal output to `.md`. Say "check the logs." |
-| 8 | Multi-session | Short focused chats. Dump context. Hand off via `.md`. |
-| 9 | Worktrees | Run tasks async. Review diffs later. |
-| 10 | Workspace | Separate repo for docs, scripts, plans, context. |
-| 11 | Skills + Subagents | Repeatable workflows. Parallel execution. |
-| 12 | Permissions + tmux | Pre-approve tools. Skip permissions for headless runs. |
-| 13 | CLI > MCP | CLI wins on context efficiency, not network speed. |
-| 14 | Stay updated | Read changelogs. Use beta features early. |
