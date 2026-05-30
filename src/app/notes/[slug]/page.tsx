@@ -34,7 +34,7 @@ export default async function NotePage({
   if (!result) notFound();
 
   return (
-    <article className="max-w-3xl mx-auto px-6 pt-28 pb-20">
+    <article className="max-w-3xl mx-auto px-6 pt-12 pb-20">
       <header className="mb-10">
         <h1 className="text-[32px] font-semibold tracking-[-0.02em] leading-[1.2] mb-3">
           {result.frontmatter.title}

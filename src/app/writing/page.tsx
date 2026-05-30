@@ -12,7 +12,7 @@ export default async function WritingPage() {
   const posts = await getContentList("writing");
 
   return (
-    <div className="max-w-3xl mx-auto px-6 pt-28 pb-20">
+    <div className="max-w-3xl mx-auto px-6 pt-12 pb-20">
         <SectionHeader label="Writing" />
 
         {posts.length === 0 ? (

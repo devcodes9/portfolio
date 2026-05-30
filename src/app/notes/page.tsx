@@ -12,7 +12,7 @@ export default async function NotesPage() {
   const notes = await getContentList("notes");
 
   return (
-    <div className="max-w-3xl mx-auto px-6 pt-28 pb-20">
+    <div className="max-w-3xl mx-auto px-6 pt-12 pb-20">
       <SectionHeader label="Notes" />
 
       {notes.length === 0 ? (
