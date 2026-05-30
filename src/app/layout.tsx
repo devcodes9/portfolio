@@ -4,6 +4,7 @@ import { IBM_Plex_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { siteConfig } from "@/lib/config";
 import "./globals.css";
 
 const inter = Inter({
@@ -19,22 +20,33 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dev-dalia.com"),
-  title: "Dev Dalia · AI Engineer",
-  description:
-    "AI engineer. I build things with LLMs and write about what I learn.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.title,
+    template: "%s · Dev Dalia",
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [{ name: siteConfig.author.name, url: siteConfig.url }],
+  creator: siteConfig.author.name,
+  alternates: {
+    canonical: "/",
+    types: {
+      "application/rss+xml": `${siteConfig.url}/feed.xml`,
+    },
+  },
   openGraph: {
-    title: "Dev Dalia · AI Engineer",
-    description:
-      "AI engineer. I build things with LLMs and write about what I learn.",
+    title: siteConfig.title,
+    description: siteConfig.tagline,
     type: "website",
-    url: "https://dev-dalia.com",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dev Dalia · AI Engineer",
-    description:
-      "AI engineer. I build things with LLMs and write about what I learn.",
+    title: siteConfig.title,
+    description: siteConfig.description,
     creator: "@devcodes9",
   },
 };
