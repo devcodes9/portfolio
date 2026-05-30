@@ -20,7 +20,7 @@ export const projects: readonly Project[] = [
     stack: ["TypeScript", "Next.js", "Claude Agent SDK", "MCP", "E2B", "Langfuse", "PostgreSQL"],
     featured: true,
     status: "shipped",
-    live: "https://alawyer.at/",
+    live: "https://alawyer.ai/",
   },
   {
     slug: "web-research-agent",
