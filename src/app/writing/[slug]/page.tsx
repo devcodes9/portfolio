@@ -122,7 +122,7 @@ export default async function WritingPost({
       </article>
 
       <aside className="hidden xl:block w-56 shrink-0">
-        <div className="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto">
+        <div className="sticky top-12 max-h-[calc(100vh-6rem)] overflow-y-auto">
           <Toc items={result.toc} />
         </div>
       </aside>

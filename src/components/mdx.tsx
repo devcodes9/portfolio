@@ -6,7 +6,7 @@ export const mdxComponents: MDXComponents = {
   h1: ({ children, id }) => (
     <h1
       id={id}
-      className="group scroll-mt-28 text-[32px] font-semibold tracking-[-0.02em] mt-12 mb-4 first:mt-0"
+      className="group scroll-mt-16 text-[32px] font-semibold tracking-[-0.02em] mt-12 mb-4 first:mt-0"
     >
       {children}
     </h1>
@@ -14,13 +14,13 @@ export const mdxComponents: MDXComponents = {
   h2: ({ children, id }) => (
     <h2
       id={id}
-      className="group scroll-mt-28 text-[24px] font-semibold tracking-[-0.01em] mt-10 mb-3"
+      className="group scroll-mt-16 text-[24px] font-semibold tracking-[-0.01em] mt-10 mb-3"
     >
       {children}
     </h2>
   ),
   h3: ({ children, id }) => (
-    <h3 id={id} className="group scroll-mt-28 text-[18px] font-semibold mt-8 mb-2">
+    <h3 id={id} className="group scroll-mt-16 text-[18px] font-semibold mt-8 mb-2">
       {children}
     </h3>
   ),

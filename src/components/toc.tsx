@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import type { TocItem } from "@/lib/content";
 
 export function Toc({ items }: { items: TocItem[] }) {
   const [activeId, setActiveId] = useState<string>("");
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const headings = items
@@ -31,10 +32,44 @@ export function Toc({ items }: { items: TocItem[] }) {
     return () => observer.disconnect();
   }, [items]);
 
+  // Keep the active item visible within the (scrollable) TOC container as the
+  // reader scrolls. Scrolls only the TOC's own scroll box, never the page.
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!activeId || !nav) return;
+
+    const link = nav.querySelector<HTMLElement>(
+      `a[href="#${CSS.escape(activeId)}"]`
+    );
+    if (!link) return;
+
+    // Nearest scrollable ancestor of the TOC.
+    let scroller: HTMLElement | null = nav.parentElement;
+    while (
+      scroller &&
+      scroller.scrollHeight <= scroller.clientHeight
+    ) {
+      scroller = scroller.parentElement;
+    }
+    if (!scroller) return;
+
+    const margin = 24;
+    const sRect = scroller.getBoundingClientRect();
+    const lRect = link.getBoundingClientRect();
+    if (lRect.top < sRect.top + margin) {
+      scroller.scrollBy({ top: lRect.top - sRect.top - margin, behavior: "smooth" });
+    } else if (lRect.bottom > sRect.bottom - margin) {
+      scroller.scrollBy({
+        top: lRect.bottom - sRect.bottom + margin,
+        behavior: "smooth",
+      });
+    }
+  }, [activeId]);
+
   if (items.length === 0) return null;
 
   return (
-    <nav aria-label="Table of contents" className="text-[13px]">
+    <nav ref={navRef} aria-label="Table of contents" className="text-[13px]">
       <p className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground/60 mb-3">
         On this page
       </p>
