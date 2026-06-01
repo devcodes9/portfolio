@@ -37,6 +37,8 @@ Better clarity = better execution. Every ambiguity you leave in the prompt is a 
 
 This mental model governs everything else in this post. Keep it in mind.
 
+If the model is a smart human missing context, the rest of this comes down to giving it that context well. It starts with how you communicate.
+
 ## Part 2: Communication Foundation - How to Talk to It
 
 ### Why Always `.md`?
@@ -90,6 +92,8 @@ That last point is the real unlock. When the agent makes a mistake, I don't trea
 
 This is meta-learning with a text file. The model doesn't get smarter, but your *configuration* of it does. Over weeks, a good `CLAUDE.md` turns a general assistant into something that already knows your codebase, your constraints, and your scars. The mistakes become training data instead of recurring annoyances.
 
+Once you can brief it clearly and persist what it learns, the question becomes how you actually work with it day to day.
+
 ## Part 3: Core Workflow - Day-to-Day Usage
 
 ### Plan Mode - Stay in the Driver's Seat
@@ -118,6 +122,8 @@ When debugging, don't paste raw logs into the chat. Instead:
 3. The model reads it with full context (no truncation, no copy-paste errors)
 
 This gets you to root cause almost every time. Structured log files are significantly more useful than wall-of-text chat pastes.
+
+Those habits cover the day-to-day. The next leap is running the agent at scale: across sessions, branches, and your whole workspace.
 
 ## Part 4: Scale and Power Patterns - When You Level Up
 
@@ -168,6 +174,8 @@ This workspace can be its own git repo, committed separately from code. Now you 
 - *"Run the script in `scripts/slack-dump.sh` and summarize the feedback"*
 
 The power is that **Claude operates across technical and non-technical decisions**, not just code changes, but architectural choices, feature allocation, team planning. The workspace is the connective tissue.
+
+With the agent working at scale, the last layer is the meta: the systems and habits that compound, skills, subagents, safe autonomy, and staying ahead of the tooling.
 
 ## Part 5: Meta - The Bigger Picture
 
@@ -232,6 +240,8 @@ The compounding advantage of AI tooling is real. Check changelogs regularly:
 New features often come with **free beta credits or extra usage**. Early adopters get to experiment at no cost and build familiarity before it becomes table stakes.
 
 What feels like a power-user trick today is a baseline expectation in 6 months.
+
+Put all of it together, mindset, communication, workflow, scale, and meta, and it looks like this.
 
 ## The Demo: Claude as Orchestrator
 
